@@ -79,6 +79,7 @@ public class home {
          
          
         case 2:
+        	//deletion
        	 boolean del=false;
        	 System.out.println(">>--------Delete File--------<<");
             System.out.println("Enter filename to Delete :");
@@ -101,15 +102,17 @@ public class home {
        				 {
        						System.out.println("Failed");
        					}
+       				 }
+       			 }
+       		 
        		 }
-       		 }
-       		 }
-       	 if(del==false) {    						System.out.println("File Not Found");}
+       	 if(del==false) {
+       		 System.out.println("File Not Found");}
 
        	 break;
         case 3:
-          	 System.out.println(">>--------Search File--------<<");
-
+        	//search
+    	System.out.println(">>--------Search File--------<<");
        	 boolean flag=false;
        	 System.out.println("Enter filename to search :");
        	 Scanner in2 = new Scanner(System.in);
@@ -126,9 +129,8 @@ public class home {
        						System.out.println(file.getName() + " located");
        						flag=true;
        						break;
-       					}
-       				
-       		 }
+       					} 
+       			 }
        		 }
        	 if(flag==true) {
        		 break;
@@ -137,22 +139,28 @@ public class home {
        	 System.out.println("File not found. Recheck the spelling and try again");
        	 break;
        	 }
-      
+        case 4:
+        	System.out.println("**Back to Main Menu**");
+        	break;
+        	
 
          default:
         	 System.out.println("Input not recognized, try again");
+        	 break;
+        	 }
         }
-        }
-        while(ch!=4);
+        while(ch!=4); 
+        break;
+        
+    case 3:
+    	//exit
+    	System.out.println("**Application shutting down**");
+    	break;
+    	
     default:
    	 System.out.println("Input not recognized, try again");
-
-    }
+   	 break;
+   	 }
     }while(option!=3);
-	 
-    
-    
-    	
-    
-	}
+    }
 }
