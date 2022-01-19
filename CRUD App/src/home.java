@@ -28,8 +28,11 @@ public class home {
 
         File[] filesArray = myDir.listFiles();
         //sort all files
+        if(filesArray.length==0) {
+        	System.out.println("Directory is empty, To add new files go to Operations->Add");
+        }
         Arrays.sort(filesArray);
-
+        
         //print the sorted values
         for (File file : filesArray) {
             if (file.isFile()) {
@@ -134,29 +137,16 @@ public class home {
        	 System.out.println("File not found. Recheck the spelling and try again");
        	 break;
        	 }
-       	/* 
-        case 3:
-       	 System.out.println(">>--------Search File--------");
-
-       	 File[] filesArray1 = myDir.listFiles();
-       	 for (File file : filesArray1) {
-                if (file.isFile()) {
-               	 System.out.println("File : " + file.getName());
-                } else if (file.isDirectory()) {
-               	 System.out.println("Directory : " + file.getName());
-                } else {
-               	 System.out.println("Unknown : " + file.getName());
-                }
-            }
       
-        }
-        */
 
-         
+         default:
+        	 System.out.println("Input not recognized, try again");
         }
         }
         while(ch!=4);
-    	
+    default:
+   	 System.out.println("Input not recognized, try again");
+
     }
     }while(option!=3);
 	 
