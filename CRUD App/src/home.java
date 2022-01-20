@@ -8,7 +8,7 @@ public class home {
 		System.out.println("Welcome to LockedMe.com. Youre viewing a prototype version designed by Saikumar Iyer.");
     File myDir = new File("MyDocs");
     Scanner s = new Scanner(System.in);
-    int option;
+    int option=0;
     
     
     //main menu
@@ -18,16 +18,23 @@ public class home {
     System.out.println("2.Operations");
     System.out.println("3.Exit");
     System.out.print("Enter your selection: ");
-    option = s.nextInt();
-    
-    
+    if (s.hasNextInt())
+    {
+        option = s.nextInt();
+
+    }
+    else
+    {
+        String stri = s.next();
+
+    }
+
     switch(option) {
     case 1:
     	//sort
     
 
         File[] filesArray = myDir.listFiles();
-        //sort all files
         if(filesArray.length==0) {
         	System.out.println("Directory is empty, To add new files go to Operations->Add");
         }
@@ -42,7 +49,7 @@ public class home {
         
         break;
     case 2:
-    	int ch;
+    	int ch=0;
     	//operations menu
 
         do{
@@ -53,7 +60,17 @@ public class home {
            System.out.println("3.Search");
            System.out.println("4.Back to Main Menu");
            System.out.print("Enter your selection: ");
-           ch = s.nextInt();
+           if (s.hasNextInt())
+           {
+               ch = s.nextInt();
+
+           }
+           else
+           {
+               String stri = s.next();
+
+           }
+           
            
         
         switch(ch) {
@@ -162,5 +179,5 @@ public class home {
    	 break;
    	 }
     }while(option!=3);
-    }
+   }
 }
