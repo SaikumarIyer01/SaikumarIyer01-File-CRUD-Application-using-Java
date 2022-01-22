@@ -143,7 +143,7 @@ public class home {
        			 if(file.getName().equals(toFind))
        			 {
        				 
-       						System.out.println(file.getName() + " located");
+       						System.out.println(file.getName() + " located at " +file.getPath() );
        						flag=true;
        						break;
        					} 
